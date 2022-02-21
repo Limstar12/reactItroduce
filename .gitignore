@@ -6,13 +6,13 @@
 .pnp.js
 README.md
 
-/public/*.*
-!/public/index.html
+# /public/*.*
+# !/public/index.html
 
-/src/*.*
-!/src/main
-!/src/App.js
-!/src/App.css
+# /src/*.*
+# !/src/main
+# !/src/App.js
+# !/src/App.css
 
 # testing
 /coverage

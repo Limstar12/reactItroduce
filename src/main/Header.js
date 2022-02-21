@@ -6,7 +6,9 @@ import { Navbar,
     UncontrolledDropdown,
     DropdownToggle,
     DropdownMenu} from 'reactstrap';
+import headerstyle from './css/header.module.css';
 import svgimg from '../img/header/githublogo.svg'
+
 
 
 
@@ -31,11 +33,12 @@ class Header extends Component{
             <header id='hd'>
                 <div className='container-fluid'>
                 <Navbar   expand='lg' light >
+                    {/* lg사이즈부터 네비게이션 보이고, 그 이하는 삼지창(메뉴바)나옴 */}
                     {/* <!--네비게이션의 navbar-expand-lg 클래스는 버튼과 네비의 반응형 관리 부모클래스 -> */}
                 
                     <NavbarBrand className='navbar-brand'>
                         <a href='/'>
-                            <img src={svgimg} alt='피곤한 svg는 모듈로 로드한다. 아래처럼은 안들어온다.'></img>
+                            <img src={svgimg} alt='피곤한 svg는 태그로서 모듈로 로드한다. 아래(src={require})처럼은 안들어온다.'></img>
                             <img src={require('../img/header/naverlogo.png')} className='visually-hidden' alt='sr-only에서 visually-hidden으로 클래스명 수정'  />
                         </a>
                     </NavbarBrand>
@@ -45,7 +48,7 @@ class Header extends Component{
                     <Collapse isOpen={ this.state.isOpen } navbar>
                         <ul className="navbar-nav">
                             <NavItem>
-                                <NavLink to="/components/">Components</NavLink>
+                                <NavLink to="/components/" className={"sytle.color"}>Components</NavLink>
                             </NavItem>
                             <NavItem>
                                 <NavLink to="/components2/">Components2</NavLink>
@@ -55,6 +58,7 @@ class Header extends Component{
                             </NavItem>
                            
                             <UncontrolledDropdown nav >
+                                {/* 기본태그는 div 태그. UncontrolledDropdown 누르면 메롱이가 됨. */}
                                 {/* 중요 옵션 nav를 넣어주어야 li태그가 됨 */}
                             <DropdownToggle tag='a' href='#none'>
                             Dropdown link
